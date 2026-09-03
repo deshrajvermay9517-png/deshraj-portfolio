@@ -1,0 +1,8 @@
+"use client";
+import { useMemo,useState } from "react";
+import type { Project } from "@/data/portfolio";
+export function ProjectGrid({projects}:{projects:Project[]}){
+  const filters=["All","Full Stack","AI","Computer Vision"];const [active,setActive]=useState("All");
+  const visible=useMemo(()=>active==="All"?projects:projects.filter(p=>p.categories.includes(active)),[active,projects]);
+  return <><div className="mb-7 flex flex-wrap gap-2">{filters.map(f=><button key={f} onClick={()=>setActive(f)} className={active===f?"filter-active":"filter"}>{f}</button>)}</div><div className="grid gap-5 md:grid-cols-2">{visible.map((p,i)=><article key={p.title} className="card transition hover:-translate-y-1 hover:shadow-xl"><p className="text-xs font-bold tracking-[.18em] text-teal-600 dark:text-teal-400">PROJECT {String(i+1).padStart(2,"0")}</p><h3 className="mt-2 text-xl font-black">{p.title}</h3><p className="mt-1 text-sm font-semibold text-slate-500">{p.subtitle}</p><p className="mt-4 leading-7 text-slate-600 dark:text-slate-300">{p.description}</p><ul className="mt-5 grid gap-2 text-sm text-slate-600 dark:text-slate-300 sm:grid-cols-2">{p.highlights.map(h=><li key={h} className="flex gap-2"><span className="text-teal-500">✓</span>{h}</li>)}</ul><div className="mt-5 flex flex-wrap gap-2">{p.tech.map(t=><span key={t} className="chip">{t}</span>)}</div><div className="mt-6 flex gap-3">{p.github&&<a className="btn-secondary" href={p.github} target="_blank" rel="noreferrer">GitHub ↗</a>}{p.live&&<a className="btn-primary" href={p.live} target="_blank" rel="noreferrer">Live ↗</a>}</div></article>)}</div></>
+}

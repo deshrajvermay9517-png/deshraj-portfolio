@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DV">
+  <rect width="64" height="64" rx="16" fill="#0f172a"/>
+  <circle cx="49" cy="17" r="5" fill="#14b8a6"/>
+  <text x="12" y="43" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" fill="#ffffff">DV</text>
+</svg>
