@@ -1,104 +1,76 @@
-# Deshraj Verma Portfolio — V1
+# Deshraj Verma — Developer Portfolio
 
-Recruiter-focused portfolio built with Next.js, TypeScript and Tailwind CSS.
+Personal recruiter-focused portfolio for **Deshraj Verma**, Full Stack Developer.
 
-## Included
+## Live Website
+
+**[deshraj-portfolio-two.vercel.app](https://deshraj-portfolio-two.vercel.app/)**
+
+## Tech Stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Resend
+- Vercel
+
+## Highlights
+
 - Responsive one-page portfolio
-- Dark/light mode
-- Experience, featured projects and filters
+- Dark / light mode
+- Professional profile and downloadable public-safe resume
+- Internship experience
+- Featured full-stack and AI projects
 - Open-source contributions
-- Skills, coding profiles, achievements, education
-- FutureRouteX section
-- Services and contact form
-- Security headers + server-side validation + honeypot + basic rate limiting
-- Central data file for easy future updates
+- Skills and coding profiles
+- Hackathons and achievements
+- FutureRouteX YouTube and Instagram embeds
+- Contact form with server-side validation, honeypot and rate limiting
+- SEO metadata, Open Graph preview, sitemap, robots and structured data
 
-## Main file for future edits
-`src/data/portfolio.ts`
+## Featured Sections
 
-Projects, links, skills, stats, achievements and profile copy live here. This makes future updates simple instead of rebuilding the website.
+- About
+- Experience
+- Projects
+- Open Source
+- Skills
+- Coding Profiles
+- Achievements
+- Education
+- FutureRouteX
+- Services
+- Contact
 
-## Add profile photo later
-Put the image at:
-`public/images/profile/deshraj.jpg`
+## Local Development
 
-Then update the hero component to render the image instead of the current `DV` placeholder. This is intentionally left for the final photo selection.
-
-## Add safe public resume later
-Put the phone-number-free PDF at:
-`public/resume/deshraj-verma-resume.pdf`
-
-Then set in `src/data/portfolio.ts`:
-`resumeUrl: "/resume/deshraj-verma-resume.pdf"`
-
-## FutureRouteX embeds
-Exact Reel/YouTube links are still pending. Add them later without changing the overall design.
-
-## Contact form
-Copy `.env.example` to `.env.local` and add a Resend API key/from address. Direct email remains visible even before the form is configured.
-
-## Run
 ```bash
 npm install
 npm run dev
 ```
+
 Then open `http://localhost:3000`.
 
-## Before public deployment
-1. Add final profile photo.
-2. Add phone-free resume.
-3. Verify all public URLs.
-4. Add exact FutureRouteX embed links.
-5. Configure contact form environment variables.
-6. Run `npm run build`.
-7. Push to GitHub and deploy through Vercel.
-
-## Privacy rules already applied
-Not published: phone number, exact address/hostel, roll number/student ID, DOB, API keys/tokens, private VSERV letter, confidential company data.
-
-## V5 polish
-
-- Reduced oversized vertical gaps between sections
-- Added subtle section dividers and card hover polish
-- Added responsive mobile navigation menu
-- Improved FutureRouteX section structure for later embeds
-- Kept the existing profile photo, safe resume, and contact-form architecture
-
-## V6 fix
-- Fixed FutureRouteX runtime crash when `content.selected` was missing.
-- Added defensive rendering with `(p.content.selected ?? [])`.
-
-
-## V7 — SEO & deployment preparation
-
-Added:
-- SEO metadata and canonical URL
-- Twitter / Open Graph metadata
-- auto-generated social preview image
-- favicon / app icon
-- web app manifest
-- `robots.txt`
-- `sitemap.xml`
-- Person structured data (JSON-LD)
-- `NEXT_PUBLIC_SITE_URL` environment variable support
-
-### Production environment
-
-When the final Vercel URL exists, set:
+Create `.env.local` for contact-form configuration:
 
 ```env
-NEXT_PUBLIC_SITE_URL=https://YOUR-VERCEL-DOMAIN.vercel.app
+RESEND_API_KEY=your_resend_api_key
+CONTACT_FROM_EMAIL=your_verified_sender
+CONTACT_TO_EMAIL=your_destination_email
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-Keep the existing Resend environment variables configured in Vercel as well.
+Never commit `.env.local` or API keys.
 
+## Production
 
-## V8 — FutureRouteX embeds
+Deployed on Vercel:
 
-Added the final selected content embeds:
-- YouTube: Interactive 3D AGI Singularity
-- YouTube: Interactive 11D String Theory / Calabi-Yau
-- Instagram: 10K-view Reel
-- Instagram: 9K+ view Reel
+**https://deshraj-portfolio-two.vercel.app/**
 
-YouTube uses the privacy-enhanced `youtube-nocookie.com` embed domain. Instagram uses official Reel embed URLs.
+Production environment variables are configured through Vercel.
+
+## Privacy
+
+The public portfolio intentionally does not expose private phone numbers, exact addresses, student IDs, DOB, API keys, or private internship documents.
